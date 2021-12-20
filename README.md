@@ -14,3 +14,8 @@
 
 ### cleaning dataset
 > - Changing status of non existent duplicate bugs to nonduplicate
+> - Changing status of duplicate bugs with empty dup_if to nonduplicate
+> - Addressing the cycle problem
+> - Removal of OPEN bugs
+
+[!Number of total and duplicate bugs](media/bugs.png)
