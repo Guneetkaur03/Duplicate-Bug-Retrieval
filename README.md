@@ -2,10 +2,10 @@
 
 ### Data
 Dataset: http://alazar.people.ysu.edu/msr14data/
-> mongorestore
-> mongo mozilla
-> show collections
-> db.mozall.count()
+> - mongorestore
+> - mongo mozilla
+> - show collections
+> - db.mozall.count()
 
 ### Research Questions
 - RQ1: Does Accuracy and Recall generalizewell on the new
