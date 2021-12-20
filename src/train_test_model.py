@@ -5,13 +5,14 @@
     It also divides the data into features and arrange them according 
     to the batches.
 """
-import helper_data
+#import helper_data
 import baseline
 import proposed
+import helper_data
 from loss import *
 from constants import *
+#from helper_data import *
 from helper_data import *
-
 def train_network(net, optimizer):
     """
         This module all training steps for the module.

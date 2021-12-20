@@ -50,6 +50,6 @@ def load_emb_matrix(vocab_size, emb_size, data):
 
 
 if __name__ == '__main__':
-  vocab = load_vocabulary('../data/eclipse/word_vocab.pkl')
+  vocab = load_vocabulary('../data/word_vocab.pkl')
   for token in vocab:
     print(token)
