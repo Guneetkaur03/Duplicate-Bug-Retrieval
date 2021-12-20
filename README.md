@@ -1,15 +1,13 @@
 # Duplicate-Bug-Retrieval
 
 ### Data
-<br/>
-> Dataset: http://alazar.people.ysu.edu/msr14data/
+Dataset: http://alazar.people.ysu.edu/msr14data/
 > mongorestore
 > mongo mozilla
 > show collections
 > db.mozall.count()
 
 ### Research Questions
-</br>
 - RQ1: Does Accuracy and Recall generalizewell on the new
 dataset (Mozilla)?
 - RQ 2: Can we deduce some generalizedtrends in bug reports?
@@ -20,7 +18,6 @@ or Tree-LSTM insteadof Bi-LSTM help in improving?
 tion setting?
 
 #### Datset Preprocessing
-</br>
 
 #### Exporting the dataset to csv
 > convert and export the mongodb database to a csv file
