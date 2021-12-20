@@ -1,21 +1,44 @@
 # Duplicate-Bug-Retrieval
 
-### *Dataset Download*
+### Dataset Download
 > Dataset: http://alazar.people.ysu.edu/msr14data/
 > mongorestore
 > mongo mozilla
 > show collections
 > db.mozall.count()
 
-### exporting the dataset to csv
+### Exporting the dataset to csv
 > convert and export the mongodb database to a csv file
 > mongoexport --host localhost --db mozilla --collection mozall --type=csv --out bug-dataset-mozilla.csv --fields=_id,bug_id,product,description,bug_severity,dup_id,short_desc,priority,version,component,delta_ts,bug_status,creation_ts,resolution
-[!Exporting to CSV](media/convert.png)
+![Exporting to CSV](media/convert.png)
 
-### cleaning dataset
+### Cleaning dataset
 > - Changing status of non existent duplicate bugs to nonduplicate
 > - Changing status of duplicate bugs with empty dup_if to nonduplicate
 > - Addressing the cycle problem
 > - Removal of OPEN bugs
 
-[!Number of total and duplicate bugs](media/bugs.png)
+
+#### *Number of total and duplicate bugs*
+![Number of total and duplicate bugs](media/bugs.png)
+
+
+### Generating Groups
+> - Duplicate bugs contribute approx 23% of total bugs
+> - Group contains a master bug and set of duplicate bugs
+
+#### *Number of gorups and max size of group*
+![Number of gorups and max size of group](media/groups.png)
+
+#### *Histogram of group size*
+![Histogram of group size](media/histogram.png)
+
+
+### Text Pre-processing Steps
+> - Passing through NER Module
+> - Removing non alphanumeric characters
+> - Text to lower case
+> - Tokenization
+> - Word Embedding (GloVe Vectors)
+
+
