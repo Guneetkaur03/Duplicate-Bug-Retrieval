@@ -123,8 +123,6 @@ def test_network(data, top_k, net_type, features = None):
     return float(true_positives) / total_samples
 
 
-#TODO:
-# replace all prints with logs
 def run_training(net_type):
     """
         This module runs training of th defined model
@@ -157,6 +155,7 @@ def run_training(net_type):
     optimizer   = optim.Adam(net.parameters(), lr = learning_rate)
     best_recall = 0
     best_epoch  = 0
+    losses = []
     # create tqdm object for epochs
     epochs_tqdm = tqdm(range(1, epochs + 1), desc="Training Model")
     for epoch in epochs_tqdm:
@@ -165,6 +164,7 @@ def run_training(net_type):
         if epoch == 10:
             optimizer = optim.Adam(net.parameters(), lr = learning_rate * 0.1)
         loss     = train_network(net, optimizer)
+        losses.append(loss)
         features = export(net, data)
         recall   = test_network(data, top_k, net_type, features)
         print('Loss={:.4f}, Recall@{}={:.4f}'.format(loss, top_k, recall))
@@ -173,4 +173,11 @@ def run_training(net_type):
             best_epoch  = epoch
             torch.save(net, str(net_type) + checkpoint_ext)
             torch.save(features, str(net_type) + feature_ext)
+
+    
+    plt.plot(range(epochs), losses)
+    plt.xlabel('Epcohs')
+    plt.ylabel('loss')
+    plt.title('Loss v/s Epoch Curve')
+    plt.show()
     print('Best_epoch={}, Best_recall={:.4f}'.format(best_epoch, best_recall))

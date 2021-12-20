@@ -26,7 +26,6 @@ def main():
   run_training(net_type)
   
 
-
 if __name__ == "__main__":
   #run
   main()
