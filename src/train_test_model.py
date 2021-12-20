@@ -5,14 +5,12 @@
     It also divides the data into features and arrange them according 
     to the batches.
 """
-
+import helper_data
 import baseline
-import data_generator
 import proposed
-from data_generator import *
 from loss import *
 from constants import *
-
+from helper_data import *
 
 def train_network(net, optimizer):
     """
@@ -30,7 +28,7 @@ def train_network(net, optimizer):
     margin = MarginLoss(margin=1.0)
     #loop over all batches in the epoch
     for loop, (batch_x, batch_pos, batch_neg) \
-        in data_generator.batch_iterator(data, batchsize, n_neg):
+        in helper_data.batch_iterator(data, batchsize, n_neg):
         #calculate loss of all batch polarity
         loss = margin(net(batch_x), net(batch_pos), net(batch_neg))
         losses.append(loss.item())

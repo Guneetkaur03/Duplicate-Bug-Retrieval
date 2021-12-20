@@ -42,3 +42,17 @@
 > - Word Embedding (GloVe Vectors)
 
 
+### To prepare the data
+```
+python3 main.py
+```
+
+### To train the model
+```
+python3 train_test_model.py
+```
+
+### References
+[!https://github.com/tqtg/DuplicateBugFinder/tree/0e2e40de6688b62b054c305b30c4d509f9a33824]
+
+

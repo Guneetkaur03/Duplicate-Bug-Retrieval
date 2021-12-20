@@ -10,8 +10,8 @@ from libs import *
 train_data = None
 dup_sets = None
 
+UNK      = 1
 data     = './data/'
-vocab_f  = './data/eclipse/word_vocab.pkl'
 glove_f  = './data/embedding/glove.42B.{}d.txt'
 top_k    = 25
 epochs   = 30
@@ -25,7 +25,7 @@ n_prop   = 1123
 n_neg    = 1
 batchsize = 64
 learning_rate = 1e-3
-
+split = 0.9
 cuda = torch.cuda.is_available()
 feature_ext    = '_features.t7'
 checkpoint_ext = '_checkpoint.t7'
