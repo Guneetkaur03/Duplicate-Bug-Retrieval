@@ -17,7 +17,7 @@ or Tree-LSTM insteadof Bi-LSTM help in improving?
 - RQ 4: How efficient is the approach in across-project detec-
 tion setting?
 
-#### Datset Preprocessing
+### Dataset Preprocessing
 
 #### Exporting the dataset to csv
 > convert and export the mongodb database to a csv file
